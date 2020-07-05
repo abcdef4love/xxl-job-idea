@@ -1,6 +1,6 @@
 <p align="center" >
     <img src="https://www.xuxueli.com/doc/static/xxl-job/images/xxl-logo.jpg" width="150">
-    <h3 align="center">XXL-JOB</h3>
+    <h3 align="center">XXL-JOB （用于研究嵌入到当前业务系统中）</h3>
     <p align="center">
         XXL-JOB, a distributed task scheduling framework.
         <br>
