@@ -1,9 +1,6 @@
 package com.xuxueli.executor.sample.frameless.config;
 
-import com.xuxueli.executor.sample.frameless.jobhandler.CommandJobHandler;
-import com.xuxueli.executor.sample.frameless.jobhandler.DemoJobHandler;
-import com.xuxueli.executor.sample.frameless.jobhandler.HttpJobHandler;
-import com.xuxueli.executor.sample.frameless.jobhandler.ShardingJobHandler;
+import com.xuxueli.executor.sample.frameless.jobhandler.*;
 import com.xxl.job.core.executor.XxlJobExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +31,7 @@ public class FrameLessXxlJobConfig {
 
         // registry jobhandler
         XxlJobExecutor.registJobHandler("demoJobHandler", new DemoJobHandler());
+        XxlJobExecutor.registJobHandler("sendMessageJobHandler", new SendMessageJobHandler());
         XxlJobExecutor.registJobHandler("shardingJobHandler", new ShardingJobHandler());
         XxlJobExecutor.registJobHandler("httpJobHandler", new HttpJobHandler());
         XxlJobExecutor.registJobHandler("commandJobHandler", new CommandJobHandler());
@@ -76,7 +74,7 @@ public class FrameLessXxlJobConfig {
         try {
             ClassLoader loder = Thread.currentThread().getContextClassLoader();
 
-            in = new InputStreamReader(loder.getResourceAsStream(propertyFileName), "UTF-8");;
+            in = new InputStreamReader(loder.getResourceAsStream(propertyFileName), "UTF-8");
             if (in != null) {
                 Properties prop = new Properties();
                 prop.load(in);

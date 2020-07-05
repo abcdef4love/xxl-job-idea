@@ -38,6 +38,8 @@ public class SampleXxlJob {
      */
     @XxlJob("demoJobHandler")
     public ReturnT<String> demoJobHandler(String param) throws Exception {
+
+        XxlJobLogger.log("JobHandler Name--->demoJobHandler");
         XxlJobLogger.log("XXL-JOB, Hello World.");
 
         for (int i = 0; i < 5; i++) {
